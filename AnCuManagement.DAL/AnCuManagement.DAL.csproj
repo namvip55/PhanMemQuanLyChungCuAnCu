@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoWarn>$(NoWarn);NU1902;NU1903</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="11.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnCuManagement.Common\AnCuManagement.Common.csproj" />
+    <ProjectReference Include="..\AnCuManagement.DTO\AnCuManagement.DTO.csproj" />
+  </ItemGroup>
+</Project>

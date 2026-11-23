@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);WFO1000;NU1902;NU1903;CS8600;CS8601;CS8602;CS8604</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnCuManagement.BLL\AnCuManagement.BLL.csproj" />
+    <ProjectReference Include="..\AnCuManagement.Common\AnCuManagement.Common.csproj" />
+    <ProjectReference Include="..\AnCuManagement.DTO\AnCuManagement.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="UserControls\" />
+  </ItemGroup>
+
+</Project>
