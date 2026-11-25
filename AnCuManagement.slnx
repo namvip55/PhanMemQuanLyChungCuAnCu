@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="AnCuManagement.BLL/AnCuManagement.BLL.csproj" />
+  <Project Path="AnCuManagement.Common/AnCuManagement.Common.csproj" />
+  <Project Path="AnCuManagement.DAL/AnCuManagement.DAL.csproj" />
+  <Project Path="AnCuManagement.DTO/AnCuManagement.DTO.csproj" />
+  <Project Path="AnCuManagement.GUI/AnCuManagement.GUI.csproj" />
+</Solution>
