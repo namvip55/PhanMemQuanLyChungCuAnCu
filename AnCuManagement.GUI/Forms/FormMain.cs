@@ -5,10 +5,6 @@ using AnCuManagement.DTO;
 
 namespace AnCuManagement.GUI.Forms
 {
-    /// <summary>
-    /// Giao diện chính điều hướng & phân quyền 3 tác nhân (UC1)
-    /// Do Nguyễn Thành Nam (MSSV: 24810310230) phụ trách thiết kế & lập trình.
-    /// </summary>
     public partial class FormMain : Form
     {
         private readonly TaiKhoanDTO _currentUser;
@@ -26,6 +22,11 @@ namespace AnCuManagement.GUI.Forms
             lblVaiTro.Text = $"Vai trò: {GetRoleDisplayName(_currentUser.QuyenHan)}";
             UpdateClock();
             PhanQuyenMenu();
+
+            if (_currentUser.QuyenHan != AppConstants.QUYEN_KHACH_THUE)
+            {
+                OpenChildForm(new FormPhong(_currentUser));
+            }
         }
 
         private string GetRoleDisplayName(string quyenHan)
@@ -86,9 +87,9 @@ namespace AnCuManagement.GUI.Forms
             MessageBox.Show($"{moduleName} đang được triển khai trên nhánh tính năng tương ứng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void mnuDanhSachPhong_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Quản lý phòng (Phan Công Thành Đạt - UC2)");
-        private void mnuThietBiPhong_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Thiết bị phòng (Phan Công Thành Đạt - UC2)");
-        private void mnuKhachThue_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Quản lý khách thuê (Phan Công Thành Đạt - UC3)");
+        private void mnuDanhSachPhong_Click(object? sender, EventArgs e) => OpenChildForm(new FormPhong(_currentUser));
+        private void mnuThietBiPhong_Click(object? sender, EventArgs e) => OpenChildForm(new FormThietBiPhong(_currentUser));
+        private void mnuKhachThue_Click(object? sender, EventArgs e) => OpenChildForm(new FormKhachThue(_currentUser));
         private void mnuDanhSachHopDong_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Hợp đồng thuê nhà (Lê Ngọc Quyền - UC4)");
         private void mnuChiSoDienNuoc_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Chỉ số điện nước (Lê Ngọc Quyền - UC5)");
         private void mnuDichVu_Click(object? sender, EventArgs e) => ShowModulePending("Phân hệ Quản lý dịch vụ (Lê Ngọc Quyền - UC5)");
